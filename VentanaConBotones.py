@@ -1,45 +1,30 @@
-import sys
-from PyQt6.QtWidgets import (QApplication, QWidget,
-                             QPushButton, QGridLayout, QMainWindow, QVBoxLayout)
+import gi
+
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 
 
-class Example(QMainWindow):
-
+class MainWindow(Gtk.Window):
     def __init__(self):
         super().__init__()
+        self.set_title("Gtk ex window")
 
-        self.setWindowTitle("ExGridLayout")
+        vBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+        vBox.add(Gtk.Button(label="Button 1"))
+        vBox.add(Gtk.Button(label="Button 2"))
 
-        grid = QGridLayout()
+        hBox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+        hBox.add(Gtk.Button(label="Button 3"))
+        hBox.add(Gtk.Button(label="Button 4"))
+        hBox.add(Gtk.Button(label="Button 5"))
+        vBox.add(hBox)
 
-        grid.addWidget(QPushButton('1'), 0, 0)
-        grid.addWidget(QPushButton('2'), 0, 1)
-        grid.addWidget(QPushButton('3'), 0, 2)
-        grid.addWidget(QPushButton('4'), 1, 0)
-        grid.addWidget(QPushButton('5'), 1, 1)
-        grid.addWidget(QPushButton('6'), 1, 2)
-        grid.addWidget(QPushButton('7'), 2, 0)
-        grid.addWidget(QPushButton('8'), 2, 1)
-        grid.addWidget(QPushButton('9'), 2, 2)
-        grid.setContentsMargins(0, 0, 0, 6)
+        self.add(vBox)
 
-        gridContainer = QWidget()
-        gridContainer.setLayout(grid)
-        self.setCentralWidget(gridContainer)
-
-        boxV = QVBoxLayout()
-        boxV.setSpacing(0)
-        boxV.addWidget(gridContainer)
-        boxV.addWidget(QPushButton('0'))
-
-        container = QWidget()
-        container.setLayout(boxV)
-        self.setCentralWidget(container)
-
-        self.show()
+        self.connect("delete-event", Gtk.main_quit)
+        self.show_all()
 
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = Example()
-    sys.exit(app.exec())
+if __name__ == "__main__":
+    MainWindow()
+    Gtk.main()

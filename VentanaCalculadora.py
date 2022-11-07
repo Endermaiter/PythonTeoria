@@ -1,6 +1,6 @@
 import sys
 from PyQt6.QtWidgets import (QApplication, QWidget,
-                             QPushButton, QGridLayout, QMainWindow, QVBoxLayout)
+                             QPushButton, QGridLayout, QMainWindow, QVBoxLayout, QHBoxLayout, QLineEdit)
 
 
 class Example(QMainWindow):
@@ -21,7 +21,7 @@ class Example(QMainWindow):
         grid.addWidget(QPushButton('7'), 2, 0)
         grid.addWidget(QPushButton('8'), 2, 1)
         grid.addWidget(QPushButton('9'), 2, 2)
-        grid.setContentsMargins(0, 0, 0, 6)
+        grid.setContentsMargins(6, 2, 2, 2)
 
         gridContainer = QWidget()
         gridContainer.setLayout(grid)
@@ -29,11 +29,36 @@ class Example(QMainWindow):
 
         boxV = QVBoxLayout()
         boxV.setSpacing(0)
+
+
+        """Caixa de texto"""
+
+        boxV.addWidget(QLineEdit())
+        boxV.setSpacing(6)
+
+        """Boton 0"""
+
         boxV.addWidget(gridContainer)
         boxV.addWidget(QPushButton('0'))
+        
+
+        teclasOperacions = QGridLayout()
+        teclasOperacions.addWidget(QPushButton("+"), 0, 0)
+        teclasOperacions.addWidget(QPushButton("-"), 1, 0)
+        teclasOperacions.addWidget(QPushButton("X"), 2, 0)
+        teclasOperacions.addWidget(QPushButton("/"), 3, 0)
+        teclasOperacions.addWidget(QPushButton("="), 4, 0)
+
+        caixaH = QHBoxLayout()
+        control = QWidget()
+        control.setLayout(boxV)
+        caixaH.addWidget(control)
+        control = QWidget()
+        control.setLayout(teclasOperacions)
+        caixaH.addWidget(control)
 
         container = QWidget()
-        container.setLayout(boxV)
+        container.setLayout(caixaH)
         self.setCentralWidget(container)
 
         self.show()

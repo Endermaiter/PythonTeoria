@@ -25,7 +25,7 @@ class MainWindow(Gtk.Window):
         model1.append(('Ola',))
 
         vBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-        vBox.add(Gtk.Label("Hojas Visibles"))
+        vBox.add(Gtk.Label(label="Hojas Visibles"))
         vBox.add(self.treeView1)
 
         vBox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
@@ -33,7 +33,7 @@ class MainWindow(Gtk.Window):
         vBox2.add(Gtk.Button(label="<< Mostrar"))
 
         vBox3 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-        vBox3.add(Gtk.Label("Hojas Ocultas"))
+        vBox3.add(Gtk.Label(label="Hojas Ocultas"))
         #vBox3.add(self.treeVi)
 
         hBox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)

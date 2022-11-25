@@ -51,6 +51,7 @@ class ComboList(QMainWindow):
 
     def on_cadroTexto_returnPressed(self):
         self.lista.addItem(self.textLine.text())
+        self.textLine.setText("")
 
 
 if __name__ == '__main__':

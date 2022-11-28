@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QHBoxLayout,
 from Colors import Color
 
 
-class FiestraPrincipal(QMainWindow):
+class FiestraColores(QMainWindow):
 
     def __init__(self):
         super().__init__()
@@ -33,5 +33,5 @@ class FiestraPrincipal(QMainWindow):
 
 if __name__ == "__main__":
     aplicacion = QApplication(sys.argv)
-    fiestra = FiestraPrincipal()
+    fiestra = FiestraColores()
     aplicacion.exec()

@@ -12,7 +12,7 @@ class ComboList(QMainWindow):
         caixaV = QVBoxLayout()
 
         self.combo = QComboBox()
-        self.combo.addItems(["Hone", "Muller", "Ambos"])
+        self.combo.addItems(["Home", "Muller", "Ambos"])
         self.combo.currentIndexChanged.connect(self.on_combo_currentIndexChanged)
         self.combo.currentTextChanged.connect(self.on_combo_currentTextChanged)
         self.combo.setEditable(True)

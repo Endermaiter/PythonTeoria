@@ -1,5 +1,8 @@
 from PyQt6.QtCore import QAbstractListModel
 from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QImage
+
+tick = QImage('/home/dam2a/Escritorio/ENDERMAITER/DI/Tick.png')
 
 
 class ModeloListaTarefas(QAbstractListModel):
@@ -11,6 +14,10 @@ class ModeloListaTarefas(QAbstractListModel):
         if rol == Qt.ItemDataRole.DisplayRole:
             estado, texto = self.listaTarefas[indice.row()]
             return texto
+        if rol == Qt.ItemDataRole.DecorationRole:
+            estado, texto = self.listaTarefas[indice.row()]
+            if estado:
+                return tick
 
     def rowCount(self, index):
         return len(self.listaTarefas)

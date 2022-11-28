@@ -29,7 +29,6 @@ class QStakedLayoutClass(QMainWindow):
         caixaV.addLayout(caixaH)
         caixaV.addLayout(self.esquema)
 
-
         self.esquema.addWidget(Color("red"))
         self.esquema.addWidget(Color("blue"))
         self.esquema.addWidget(Color("green"))

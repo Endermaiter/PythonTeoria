@@ -150,7 +150,22 @@ funcion2(parametro1=2, parametro2="julio")
 
 
 def funcionNumeroParametrosVariable(parametro1, parametro2, *outro):
-    """Funcion con número de parametros variable"""
+    """Funcion con número de parametros variable
+
+    Descripcion mais completa da funcionalidade
+    da funcion. Esta explicacion é mais extensa
+    e pode introducir detalles de como se realiza as
+    tarefas, calculos, etc. Ó que se adica esta funcion
+    Funcion que recolle un numero de parámetro variable
+    e mediante un for in as imprime na consola
+
+    :parameter: parametro1 -- Primeira variable da funcion
+    :parameter: parametro2 -- Segunda variable da funcion
+    :parameter: outro -- Tupla onde se recollen os valores extraordinarios, que exceden os obrigatorios.
+
+    :return: None
+    :except: Exceptions (o tipo de excepcion que xenera)
+    """
     print(parametro1)
     print(parametro2)
     for parametro in outro:

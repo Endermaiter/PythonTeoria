@@ -1,3 +1,19 @@
+################################
+Exemplo de documentacion con RST
+################################
+
+Seccions
+--------------------------------
+
+As seccions se marcan con:
+
+* \# con sobreliña para partes
+* \* con sobreliña para capitulos
+* \= para seccions
+* \- para subseccions
+* \^ para subsubseccions
+
+
 
 Un parágrafo en Restructure text é o bloque mais basico e non necesitamos marcalo de ningunha maneira.
 
@@ -52,3 +68,20 @@ True  True  True
 |Fila de Cabeceira, columna1 | Cabeceira2                 | Cabeceira3                 | Cabeceira 4                |
 |(Cabeceira opcional         |                            |                            |                            |
 +----------------------------+----------------------------+----------------------------+----------------------------+
+
+Resaltado de texto:
+===================
+
+Temos os seguintes recursos:
+
+* Italica - equivalente a *italica*
+* Negriña - equivalente a **negriña**
+* Literal - equivalente a ``literal``
+* Subscript - texto subindice
+* Superscript - texto superindice
+* Title-reference- para titulos de libros, periodicos e outros materiales.
+
+H\ :sub:`2`\ 0
+
+E = mc\ :sup:`2`
+

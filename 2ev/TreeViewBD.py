@@ -9,7 +9,7 @@ class TreeViewBD(Gtk.Window):
 
         caixaV = Gtk.Box(orientation=Gtk.Orientation.VERTICAL,spacing=4)
         modelo = Gtk.ListStore(str,str,int,str)
-        modeloPerfis = Gtk.ListStore(str,int)
+        modeloPerfis = Gtk.ListStore(str)
 
         trvPerfilesUsuarios = Gtk.TreeView(model=modelo)
 
@@ -35,7 +35,7 @@ class TreeViewBD(Gtk.Window):
         sqlDniNome = "SELECT dni, nome FROM usuarios" # Consulta del dni y el nombre
         sqlPerfisUsuario = "SELECT idPerfil FROM perfisUsuario WHERE dniUsuario=?" #Consulta del id de perfil segun DNI
         sqlPerfis = "SELECT descricion FROM perfis WHERE idPefil=?" #Consulta de descricion de perfil segun id de perfil
-        sqlTodosPerfis = "SELECT descricion, idPefil FROM perfis"
+        sqlTodosPerfis = "SELECT descricion FROM perfis"
 
         lUsuarios = bd.consultaSenParametros(sqlDniNome)
 
